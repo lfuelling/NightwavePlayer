@@ -10,6 +10,9 @@
 		CAD1D1E721DFD9B000F5B300 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD1D1E621DFD9B000F5B300 /* AppDelegate.swift */; };
 		CAD1D1E921DFD9B000F5B300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAD1D1E821DFD9B000F5B300 /* Assets.xcassets */; };
 		CAD1D1EC21DFD9B000F5B300 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD1D1EA21DFD9B000F5B300 /* MainMenu.xib */; };
+		CAD87AEF21DFDADF00B01269 /* PreferenceWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD87AEE21DFDADF00B01269 /* PreferenceWindow.swift */; };
+		CAD87AF121DFDB0000B01269 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD87AF021DFDB0000B01269 /* StatusMenuController.swift */; };
+		CAD87AF321DFDB1300B01269 /* NightwavePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD87AF221DFDB1300B01269 /* NightwavePlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		CAD1D1EB21DFD9B000F5B300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		CAD1D1ED21DFD9B000F5B300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAD1D1EE21DFD9B000F5B300 /* NightwavePlayer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NightwavePlayer.entitlements; sourceTree = "<group>"; };
+		CAD87AEE21DFDADF00B01269 /* PreferenceWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceWindow.swift; sourceTree = "<group>"; };
+		CAD87AF021DFDB0000B01269 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		CAD87AF221DFDB1300B01269 /* NightwavePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightwavePlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 				CAD1D1EA21DFD9B000F5B300 /* MainMenu.xib */,
 				CAD1D1ED21DFD9B000F5B300 /* Info.plist */,
 				CAD1D1EE21DFD9B000F5B300 /* NightwavePlayer.entitlements */,
+				CAD87AEE21DFDADF00B01269 /* PreferenceWindow.swift */,
+				CAD87AF021DFDB0000B01269 /* StatusMenuController.swift */,
+				CAD87AF221DFDB1300B01269 /* NightwavePlayer.swift */,
 			);
 			path = NightwavePlayer;
 			sourceTree = "<group>";
@@ -92,6 +101,14 @@
 				TargetAttributes = {
 					CAD1D1E221DFD9B000F5B300 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -130,6 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAD87AF121DFDB0000B01269 /* StatusMenuController.swift in Sources */,
+				CAD87AEF21DFDADF00B01269 /* PreferenceWindow.swift in Sources */,
+				CAD87AF321DFDB1300B01269 /* NightwavePlayer.swift in Sources */,
 				CAD1D1E721DFD9B000F5B300 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +291,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = QW822SWXUV;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = NightwavePlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -290,6 +311,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = QW822SWXUV;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = NightwavePlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
