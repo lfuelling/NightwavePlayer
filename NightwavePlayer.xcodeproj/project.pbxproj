@@ -13,6 +13,7 @@
 		CAD87AEF21DFDADF00B01269 /* PreferenceWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD87AEE21DFDADF00B01269 /* PreferenceWindow.swift */; };
 		CAD87AF121DFDB0000B01269 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD87AF021DFDB0000B01269 /* StatusMenuController.swift */; };
 		CAD87AF321DFDB1300B01269 /* NightwavePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD87AF221DFDB1300B01269 /* NightwavePlayer.swift */; };
+		CAD87AF521E022D600B01269 /* UrlPreferenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD87AF421E022D600B01269 /* UrlPreferenceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		CAD87AEE21DFDADF00B01269 /* PreferenceWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceWindow.swift; sourceTree = "<group>"; };
 		CAD87AF021DFDB0000B01269 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		CAD87AF221DFDB1300B01269 /* NightwavePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightwavePlayer.swift; sourceTree = "<group>"; };
+		CAD87AF421E022D600B01269 /* UrlPreferenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlPreferenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				CAD87AEE21DFDADF00B01269 /* PreferenceWindow.swift */,
 				CAD87AF021DFDB0000B01269 /* StatusMenuController.swift */,
 				CAD87AF221DFDB1300B01269 /* NightwavePlayer.swift */,
+				CAD87AF421E022D600B01269 /* UrlPreferenceController.swift */,
 			);
 			path = NightwavePlayer;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			files = (
 				CAD87AF121DFDB0000B01269 /* StatusMenuController.swift in Sources */,
 				CAD87AEF21DFDADF00B01269 /* PreferenceWindow.swift in Sources */,
+				CAD87AF521E022D600B01269 /* UrlPreferenceController.swift in Sources */,
 				CAD87AF321DFDB1300B01269 /* NightwavePlayer.swift in Sources */,
 				CAD1D1E721DFD9B000F5B300 /* AppDelegate.swift in Sources */,
 			);

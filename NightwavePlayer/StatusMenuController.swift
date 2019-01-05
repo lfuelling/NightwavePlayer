@@ -12,7 +12,6 @@ class StatusMenuController: NSObject {
     let PREFERENCE_KEY = "nightwavePlayer.audioUrl"
     
     @IBOutlet weak var statusMenu: NSMenu!
-    @IBOutlet weak var playMenuItem: NSMenuItem!
     @IBOutlet weak var urlPreferenceWindow: NSWindow!
     @IBOutlet weak var playerUrl: NSTextField!
     
@@ -31,12 +30,7 @@ class StatusMenuController: NSObject {
     @IBAction func savePlayerUrl(sender: NSButton) {
         urlPreferenceWindow.setAccessibilityFocusedWindow(false)
         urlPreferenceWindow.close()
-        nightwavePlayer.audioUrl = playerUrl.stringValue
-        UserDefaults.standard.set(nightwavePlayer.audioUrl, forKey: PREFERENCE_KEY)
-        if(nightwavePlayer.playing) { // restert running stream when changing url
-            nightwavePlayer.stopAudio()
-            nightwavePlayer.startAudio()
-        }
+        updatePlayerUrl(playerUrl: playerUrl.stringValue)
     }
     
     @IBAction func showUrlPreferenceWindow(sender: NSMenuItem) {
@@ -51,10 +45,19 @@ class StatusMenuController: NSObject {
     
     @IBAction func togglePlay(sender: NSMenuItem) {
         if(nightwavePlayer.playing) {
-            playMenuItem.title = "Play"
+            sender.title = "Play"
             nightwavePlayer.stopAudio()
         } else {
-            playMenuItem.title = "Stop"
+            sender.title = "Stop"
+            nightwavePlayer.startAudio()
+        }
+    }
+    
+    func updatePlayerUrl(playerUrl: String) {
+        nightwavePlayer.audioUrl = playerUrl
+        UserDefaults.standard.set(nightwavePlayer.audioUrl, forKey: PREFERENCE_KEY)
+        if(nightwavePlayer.playing) { // restert running stream when changing url
+            nightwavePlayer.stopAudio()
             nightwavePlayer.startAudio()
         }
     }

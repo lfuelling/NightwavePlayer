@@ -22,6 +22,17 @@
                 <outlet property="urlPreferenceWindow" destination="Jeg-e2-KFs" id="Mbw-dM-RxV"/>
             </connections>
         </customObject>
+        <customObject id="5Ha-M8-s8Y" customClass="UrlController" customModule="NightwavePlayer" customModuleProvider="target">
+            <connections>
+                <outlet property="menuController" destination="1lP-hK-OZj" id="FhN-Bq-0vP"/>
+                <outlet property="mp3128Item" destination="TVw-1z-21t" id="Qls-Vx-EYn"/>
+                <outlet property="mp396Item" destination="mEV-3N-YSV" id="oUe-3N-Wn1"/>
+                <outlet property="opus64Item" destination="XO0-PO-Ujs" id="Kiu-no-KxG"/>
+                <outlet property="opus96Item" destination="0Mr-sc-2rh" id="Osd-7C-xEU"/>
+                <outlet property="vorbis64Item" destination="Qek-Nn-xi3" id="yGJ-IW-Q9U"/>
+                <outlet property="vorbis96Item" destination="xZR-YK-Wjc" id="CJb-rL-roz"/>
+            </connections>
+        </customObject>
         <menu id="ps7-Bu-qkR">
             <items>
                 <menuItem title="Play" id="UB6-ho-JbH">
@@ -30,11 +41,59 @@
                         <action selector="togglePlayWithSender:" target="1lP-hK-OZj" id="zl2-Yo-Uwh"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Set URL..." id="5bR-EF-BMa">
-                    <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
-                    <connections>
-                        <action selector="showUrlPreferenceWindowWithSender:" target="1lP-hK-OZj" id="QWI-GX-5W2"/>
-                    </connections>
+                <menuItem title="Set URL..." id="pDC-Ll-Toh">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Set URL..." id="IVm-Of-Nv0">
+                        <items>
+                            <menuItem title="Nightwave Plaza" enabled="NO" id="zEi-42-bqd">
+                                <attributedString key="attributedTitle"/>
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="mp3 / 128kbps" id="TVw-1z-21t">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="mp3128ClickedWithSender:" target="5Ha-M8-s8Y" id="2Il-HS-izb"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="mp3 / 96kbps" id="mEV-3N-YSV">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="mp396ClickedWithSender:" target="5Ha-M8-s8Y" id="IY1-OC-iFW"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="opus / 96kbps" id="0Mr-sc-2rh">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="opus96ClickedWithSender:" target="5Ha-M8-s8Y" id="2FR-5b-b6Q"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="opus / 64kbps" id="XO0-PO-Ujs">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="opus64ClickedWithSender:" target="5Ha-M8-s8Y" id="PYQ-jg-NC3"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="opp / 96kbps" id="xZR-YK-Wjc">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="vorbis96ClickedWithSender:" target="5Ha-M8-s8Y" id="IUe-py-GBb"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="opp / 64kbps" id="Qek-Nn-xi3">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="vorbis64ClickedWithSender:" target="5Ha-M8-s8Y" id="5zD-o3-38D"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="KiI-Vt-ISq"/>
+                            <menuItem title="Custom URL..." id="5bR-EF-BMa">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                                <connections>
+                                    <action selector="showUrlPreferenceWindowWithSender:" target="1lP-hK-OZj" id="QWI-GX-5W2"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="ZMZ-yP-k7z"/>
                 <menuItem title="Quit" id="cDy-2T-aDf">
@@ -44,22 +103,23 @@
                     </connections>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="43" y="-67"/>
         </menu>
         <window title="Set URL..." allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Jeg-e2-KFs">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="365"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="158"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
             <value key="minSize" type="size" width="480" height="365"/>
             <value key="maxSize" type="size" width="480" height="365"/>
             <value key="minFullScreenContentSize" type="size" width="480" height="365"/>
             <value key="maxFullScreenContentSize" type="size" width="480" height="365"/>
             <view key="contentView" id="Q04-Ir-OeL">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="365"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="158"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WJu-ia-vxC">
-                        <rect key="frame" x="20" y="298" width="440" height="22"/>
+                        <rect key="frame" x="20" y="91" width="440" height="22"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="P13-bH-xFM">
                             <font key="font" usesAppearanceFont="YES"/>
@@ -68,7 +128,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zAH-pG-lk6">
-                        <rect key="frame" x="18" y="328" width="74" height="17"/>
+                        <rect key="frame" x="18" y="121" width="74" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="Player URL:" id="aCw-c5-r6g">
                             <font key="font" metaFont="system"/>
@@ -77,127 +137,11 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D35-tN-qFF">
-                        <rect key="frame" x="18" y="273" width="444" height="17"/>
+                        <rect key="frame" x="18" y="49" width="444" height="34"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" selectable="YES" title="You can set the stream URL using this text field. The default URL is:" id="1a7-zV-6JJ">
+                        <textFieldCell key="cell" selectable="YES" id="1a7-zV-6JJ">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1tH-3Q-pV8">
-                        <rect key="frame" x="18" y="248" width="183" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="https://radio.plaza.one/mp3" id="Jfu-zn-TcM">
-                            <font key="font" metaFont="fixedUser" size="11"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JxL-7d-2UL">
-                        <rect key="frame" x="18" y="223" width="230" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" title="The following URLs are also possible:" id="eMa-VP-a3k">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ebf-5f-lxZ">
-                        <rect key="frame" x="18" y="198" width="203" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="https://radio.plaza.one/mp3_96" id="6ob-Qc-2sp">
-                            <font key="font" metaFont="fixedUser" size="11"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2YJ-6b-wcS">
-                        <rect key="frame" x="18" y="148" width="210" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="https://radio.plaza.one/opus_64" id="7jK-Qz-xru">
-                            <font key="font" metaFont="fixedUser" size="11"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6tC-Xy-gUT">
-                        <rect key="frame" x="18" y="173" width="190" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="https://radio.plaza.one/opus" id="qMl-8a-Asc">
-                            <font key="font" metaFont="fixedUser" size="11"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMF-53-ad4">
-                        <rect key="frame" x="18" y="123" width="183" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="https://radio.plaza.one/ogg" id="yQ1-3z-Koj">
-                            <font key="font" metaFont="fixedUser" size="11"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ljq-Lp-Ga4">
-                        <rect key="frame" x="18" y="98" width="203" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="https://radio.plaza.one/ogg_64" id="W8n-M2-9Wj">
-                            <font key="font" metaFont="fixedUser" size="11"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1jF-GT-xNN">
-                        <rect key="frame" x="237" y="248" width="104" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" title="(mp3 / 128kbps)" id="Lbr-Tw-zM1">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Db3-KV-MmH">
-                        <rect key="frame" x="237" y="198" width="99" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" title="(mp3 / 96kbps)" id="bSX-jl-Flf">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IKz-G4-UV3">
-                        <rect key="frame" x="237" y="173" width="101" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" title="(opus / 96kbps)" id="fYg-4J-ftS">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VFZ-qf-4Av">
-                        <rect key="frame" x="237" y="123" width="109" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" title="(vorbis / 96kbps)" id="kV3-vS-JMo">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dzd-fF-UI5">
-                        <rect key="frame" x="237" y="148" width="101" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" title="(opus / 64kbps)" id="7eB-l0-wcm">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kIw-wC-Meq">
-                        <rect key="frame" x="237" y="98" width="109" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" title="(vorbis / 64kbps)" id="rSB-ML-leb">
-                            <font key="font" metaFont="system"/>
+                            <string key="title">You can set the stream URL using this text field. The URL can be any URL that can be decoded by macOS AVPlayer (like mp3, wav, etc.)</string>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -213,22 +157,9 @@
                             <action selector="savePlayerUrlWithSender:" target="1lP-hK-OZj" id="d4A-iU-102"/>
                         </connections>
                     </button>
-                    <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="JgB-fB-RK9">
-                        <rect key="frame" x="20" y="87" width="440" height="5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    </box>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xwS-5r-fal">
-                        <rect key="frame" x="18" y="47" width="444" height="34"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" selectable="YES" title="Of course you can also use the player for any other valid http(s) audio stream that can be decoded by macOS." id="k80-ke-zPN">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="133" y="-137.5"/>
+            <point key="canvasLocation" x="133" y="-241"/>
         </window>
     </objects>
 </document>
